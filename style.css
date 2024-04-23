@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(240, 245, 245);
+}
+
+.container{
+    max-width: 1200px;
+    width: 95%;
+}
+
+.slider .img_list{
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(10 , 1fr);
+    scrollbar-width: none;
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+
+.slider .img_list::-webkit-scrollbar{
+    display: none;
+}
+
+.slider .img_list .img{
+    width: 325px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.container .slider-scrollbar{
+    height: 24px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+}
+
+.slider-scrollbar .scroll-track{
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    position: relative;
+    border-radius: 4px;
+}
+
+.slider-scrollbar:hover .scroll-track{
+    height: 4px;
+}
+
+.slider-scrollbar .scroll-icon{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background-color: black;
+    border-radius: inherit;
+    cursor: grab;
+}
+
+.slider-scrollbar .scroll-icon::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:-10px;
+    bottom: -10px;
+}
+
+.slider{
+    position: relative;
+}
+
+.slider .slider-btn{
+    position: absolute;
+    height: 50px;
+    top:50%;
+    width: 50px;
+    color: #fff;
+    border:none;
+    outline: none;
+    background-color: black;
+    font-size: 2.2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.slider .slider-btn:hover{
+    background-color: #444;
+}
+
+.slider .slider-btn#prev{
+    left:-20px;
+    display: none;
+}
+
+
+.slider .slider-btn#next{
+    right:-20px;
+}
+
+
+
+@media (max-width:1023px) {
+    .slider .slider-btn{
+        display: none !important;
+    }
+
+    .slider .img_list{
+        gap:10px;
+        margin-bottom: 15px;
+    }
+
+    .slider .img_list .img{
+        width: 280px;
+        height: 380px;
+    }
+
+    .slider-scrollbar .scroll-icon{
+        width: 20%;
+    }
+
+}
